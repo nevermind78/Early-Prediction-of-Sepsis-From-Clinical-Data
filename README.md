@@ -1,6 +1,6 @@
 # Early Prediction of Sepsis From Clinical Data
 
-- [Résumé](#The data)
+- [Résumé](#The-data)
 - Objectives
 - The Data
 
