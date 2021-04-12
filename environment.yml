@@ -1,9 +1,0 @@
-channels:
-  - conda-forge
-dependencies:
-  - matplotlib
-  - numpy
-  - ipywidgets
-  - pandas
-  - warnings
- 
