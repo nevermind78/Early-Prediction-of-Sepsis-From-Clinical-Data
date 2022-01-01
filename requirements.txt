@@ -6,3 +6,4 @@ sklearn
 rise
 markdown
 html
+seaborn
