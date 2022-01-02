@@ -12,7 +12,7 @@
 
 - **Six ML Algorithm** [![Binder](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/nevermind78/Capstone/blob/main/sepsis_lr.ipynb)
 
-- **MLP **  [![Binder](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/nevermind78/Capstone/blob/main/MLP2.ipynb)
+- **MLP**  [![Binder](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/nevermind78/Capstone/blob/main/MLP2.ipynb)
 
 
 ## Résumé : 
