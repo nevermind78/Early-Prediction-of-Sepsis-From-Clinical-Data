@@ -5,7 +5,9 @@
 3. [The Data](#The-Data)
 
 Try this Binder for EDA : [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/nevermind78/capstone/main?filepath=EDA.ipynb)
+
 Try this Binder for Presentation : [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/nevermind78/capstone/main?filepath=presentation.ipynb)
+
 Try this Binder for Demonstartion : [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/nevermind78/capstone/main?filepath=Demo.ipynb)
 
 ## Résumé : 
