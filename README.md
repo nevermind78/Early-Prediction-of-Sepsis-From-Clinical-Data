@@ -40,68 +40,7 @@ To do this the Knowledge Discovery in Databases (KDD) process will be adopted. T
 2. Pre-processed and cleaned up the time series into a tidy dataset by exploring the data, handling missing data, and removing noise / outliers.
 3. Building a predictive model allowing to associate the time series of biomedical measurements with a real-time severity indicator (probability of mortality) by implementing several machine learning algorithms.
 4. Evaluation and validation. The use of two databases provides an opportunity to validate the different predictive models that will be produced.
-## Brief review of ML 
-```mermaid
-flowchart TD
-    %% Section Supervisée
-    subgraph SB["🔍 Apprentissage Supervisé"]
-        direction TB
-        S[Supervisé] --> R[Régression]
-        R --> RMSE["<b>RMSE=</b><br/>$$\\sqrt{\\frac{1}{n}\\sum_{i=1}^n(\\hat{y}_i-y_i)^2}$$"]
-        RMSE --> RMSE_Exp["<small>• Mesure l'écart quadratique moyen<br>• Même unité que la variable cible<br>• Sensible aux outliers</small>"]
-        
-        R --> R2["<b>R²</b><br/>$$=1-\\frac{\\sum(y_i-\\hat{y}_i)^2}{\\sum(y_i-\\bar{y})^2}$$"]
-        R2 --> R2_Exp["<small>• Proportion de variance expliquée<br>• Plage : 0 (nul) à 1 (parfait)<br>• Peut être négatif</small>"]
-        
-        R --> MAE["<b>MAE</b><br/>$$=\\frac{1}{n}\\sum_{i=1}^n|\\hat{y}_i-y_i|$$"]
-        MAE --> MAE_Exp["<small>• Erreur absolue moyenne<br>• Moins sensible aux outliers<br>• Interprétation intuitive</small>"]
-        
-        S --> C[Classification]
-        C --> Acc["<b>Accuracy</b><br/>$$=\\frac{TP+TN}{TP+TN+FP+FN}$$"]
-        Acc --> Acc_Exp["<small>• Pourcentage correct<br>• Problème si classes déséquilibrées<br>• Bonne métrique de base</small>"]
-        
-        C --> Prec["<b>Précision</b><br/>$$=\\frac{TP}{TP+FP}$$"]
-        Prec --> Prec_Exp["<small>• Qualité des prédictions positives<br>• Important quand FP coûtent cher<br>• Ex: diagnostic médical</small>"]
-        
-        C --> F1["<b>F1-Score</b><br/>$$=2\\times\\frac{Precision\\times Recall}{Precision+Recall}$$"]
-        F1 --> F1_Exp["<small>• Moyenne harmonique<br>• Bon pour classes déséquilibrées<br>• Plage : 0 à 1</small>"]
-        C --> Recall["<b>Rappel</b><br/>$$=\\frac{TP}{TP+FN}$$"]
-        Recall --> Recall_Exp["<small>• Sensibilité<br>• Important quand FN sont critiques<br>• Ex : détection de fraude</small>"]
-    
-        Prec --> F1
-        Recall --> F1
-    end
 
-    %% Section Non-Supervisée
-    subgraph NSB["🌌 Apprentissage Non Supervise"]
-        direction TB
-        U[Non-Supervisé] --> Cl[Clustering]
-        Cl --> Sil["<b>Silhouette</b><br/>$$=\\frac{b-a}{\\max(a,b)}$$"]
-        Sil --> Sil_Exp["<small>• a = distance intra-cluster<br>• b = distance inter-cluster<br>• Valeur idéale ≈1</small>"]
-        
-        Cl --> DB["<b>Davies-Bouldin</b><br/>$$=\\frac{1}{k}\\sum_{i=1}^k\\max_{j\\neq i}\\left(\\frac{\\sigma_i+\\sigma_j}{d(c_i,c_j)}\\right)$$"]
-        DB --> DB_Exp["<small>• σ = dispersion intra-cluster<br>• d = distance centroïdes<br>• Plus petit = mieux</small>"]
-        
-        U --> Rd[Réduction de dimension]
-        Rd --> VE["<b>Variance Expliquée</b><br/>$$=\\sum_{i=1}^k\\lambda_i$$"]
-        VE --> VE_Exp["<small>• % information conservée<br>• Règle : >95% idéal<br>• Cumulatif par composante</small>"]
-    end
-
-    %% Liaison verticale
-    SB --> NSB
-
-    %% Styles
-    style SB fill:#f0f7ff,stroke:#0369a1
-    style NSB fill:#f0fdf4,stroke:#047857
-    
-
-```
-
-
-```python
-def function(x,y):
- return x+y
-``` 
 ## The Data
 Click [here](https://archive.physionet.org/users/shared/challenge-2019/) to download the complete training database (42 MB), consisting of two parts: training set A (20,336 subjects) and B (20,000 subjects).
 Each training data file provides a table with measurements over time. Each column of the table provides a sequence of measurements over time (e.g., heart rate over several hours), where the header of the column describes the measurement. Each row of the table provides a collection of measurements at the same time (e.g., heart rate and oxygen level at the same time). The table is formatted in the following way:
