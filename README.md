@@ -40,7 +40,7 @@ To do this the Knowledge Discovery in Databases (KDD) process will be adopted. T
 2. Pre-processed and cleaned up the time series into a tidy dataset by exploring the data, handling missing data, and removing noise / outliers.
 3. Building a predictive model allowing to associate the time series of biomedical measurements with a real-time severity indicator (probability of mortality) by implementing several machine learning algorithms.
 4. Evaluation and validation. The use of two databases provides an opportunity to validate the different predictive models that will be produced.
-## Brief reviex of ML 
+## Brief review of ML 
 ```mermaid
 flowchart TD
     %% Section Supervisée
@@ -96,6 +96,12 @@ flowchart TD
     
 
 ```
+
+
+```python
+def function(x,y):
+ return x+y
+``` 
 ## The Data
 Click [here](https://archive.physionet.org/users/shared/challenge-2019/) to download the complete training database (42 MB), consisting of two parts: training set A (20,336 subjects) and B (20,000 subjects).
 Each training data file provides a table with measurements over time. Each column of the table provides a sequence of measurements over time (e.g., heart rate over several hours), where the header of the column describes the measurement. Each row of the table provides a collection of measurements at the same time (e.g., heart rate and oxygen level at the same time). The table is formatted in the following way:
