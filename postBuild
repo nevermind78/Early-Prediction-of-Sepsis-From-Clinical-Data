@@ -1,0 +1,3 @@
+pip install jupyter_contrib_nbextensions
+jupyter contrib nbextension install --sys-prefix
+jupyter nbextension enable rise/main --sys-prefix
